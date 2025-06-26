@@ -8,7 +8,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox( 
-      height: 125,
+      height: 150,
       child: Row( 
         children: [
           AspectRatio(

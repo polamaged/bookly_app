@@ -64,8 +64,8 @@ flutter:
   fonts:
     - family: GT-Sectra-Fine
       fonts:
-        - asset: assets/fonts/
+        - asset: assets/fonts/GT-Sectra-Fine-Bold.ttf
 
 
   # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+  # see https://flutter.dev/ta/font-from-package
