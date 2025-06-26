@@ -5,6 +5,7 @@ import 'package:bookly_app/feature/home/presentation/views/widget/custom_app_bar
 import 'package:bookly_app/feature/home/presentation/views/widget/featured_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
