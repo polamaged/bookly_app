@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/feature/home/presentation/views/widget/bookingrating.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/custom_book_details_appbar.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/custom_book_item.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,9 @@ class BookViewDetailsBody extends StatelessWidget {
           const SizedBox(height: 43,),
           const Text('The Jungle Book' , style: Styles.textStyle30,),
            const SizedBox(height: 6,),
-          const Text('Rudyard Kipling' , style: Styles.textStyle19,),
+           Text('Rudyard Kipling' , style: Styles.textStyle19.copyWith(fontStyle: FontStyle.italic),),
+            const SizedBox(height: 20,),
+          const BookRating(mainAxisAlignment: MainAxisAlignment.center,),
 
         ],
       ),
