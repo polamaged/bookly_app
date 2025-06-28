@@ -1,4 +1,5 @@
 
+import 'package:bookly_app/core/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookDeitalsAppBar extends StatelessWidget {
@@ -11,12 +12,12 @@ class CustomBookDeitalsAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: () {
+          CustomIcon(onpressed: () {
             
-          }, icon:const Icon(Icons.close)),
-          IconButton(onPressed: () {
+          }, icon: Icons.close),
+          CustomIcon(onpressed: () {
             
-          }, icon:const Icon(Icons.shopping_cart)),
+          }, icon: Icons.shopping_cart)
         ],
       ),
     ); 
