@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/smillar_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,7 @@ class SmilirBookSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        SmilarBooksListView(), 
+        SmilarBooksListView(),
       ],
     );
   }

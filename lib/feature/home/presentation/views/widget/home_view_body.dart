@@ -36,10 +36,7 @@ class HomeViewBody extends StatelessWidget {
             child: BestSellerListView(),
           ),
         ),
-      
       ],
     );
   }
 }
-
-

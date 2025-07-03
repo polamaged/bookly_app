@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/widgets/custom_buttom.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class BookAction extends StatelessWidget {
               ),
             ),
           ),
-           Expanded(
+          Expanded(
             child: CustomButtom(
               text: 'Free Preview ',
               backgroundColor: Color(0XFFEF8262),
