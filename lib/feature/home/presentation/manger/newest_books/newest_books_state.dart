@@ -12,14 +12,14 @@ class NewestBooksLoading extends NewestBooksState {}
 class NewestBooksSuccess extends NewestBooksState {
   final List<BookModel> books;
 
-  const NewestBooksSuccess({required this.books});
+  const NewestBooksSuccess(this.books);
 
 
 }
 class NewestBooksFailure extends NewestBooksState {
   final String errMessage;
 
-  const NewestBooksFailure({required this.errMessage});
+  const NewestBooksFailure(this.errMessage);
 
 
 }
