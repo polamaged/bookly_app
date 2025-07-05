@@ -11,8 +11,12 @@ abstract class AppRoute {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (context, state) => const SplashView()),
-      GoRoute(path: KHomeView, builder: (context, state) => const HomeView()),
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const SplashView()),
+      GoRoute(
+        path: KHomeView, 
+        builder: (context, state) => const HomeView()),
       GoRoute(
         path: KBookDetailsView,
         builder: (context, state) => const BookDetailsView(),
