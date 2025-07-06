@@ -38,7 +38,7 @@ class HomeRepoImpl extends HomeRepo {
       try {
       var data = await apiService.get(
         endpoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming',
+            'volumes?Filtering=free-ebooks&q=computerscience',
       );
 
       List<BookModel> books = [];

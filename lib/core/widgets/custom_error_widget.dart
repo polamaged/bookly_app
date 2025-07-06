@@ -7,6 +7,6 @@ final String errMessage;
 
   @override
   Widget build(BuildContext context) {
-    return Text(errMessage , style: Styles.textStyle19);
+    return Center(child: Text(errMessage , style: Styles.textStyle19));
   }
 }
