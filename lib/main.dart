@@ -1,11 +1,9 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/app_route.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
 import 'package:bookly_app/feature/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/feature/home/presentation/manger/featured_books/featured_books_cubit.dart';
 import 'package:bookly_app/feature/home/presentation/manger/newest_books/newest_books_cubit.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';

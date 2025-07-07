@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/app_route.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/bookingrating.dart';
@@ -15,7 +14,7 @@ final BookModel bookModel;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoute.KBookDetailsView);
+        GoRouter.of(context).push(AppRoute.KBookDetailsView , extra: bookModel);
       },
       child: SizedBox(
         height: 150,
