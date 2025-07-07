@@ -1,12 +1,13 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/bookingrating.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/books_action.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.books});
+final BookModel books;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -14,18 +15,18 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          //child: const CustomBookImage(),
+          child: CustomBookImage(imageUrl: books.volumeInfo.imageLinks.thumbnail,),
         ),
         const SizedBox(height: 43),
-        const Text('The Jungle Book', style: Styles.textStyle30),
+        Text(books.volumeInfo.title!, style: Styles.textStyle30 , textAlign: TextAlign.center,),
         const SizedBox(height: 6),
         Text(
-          'Rudyard Kipling',
+          books.volumeInfo.authors![0],
           style: Styles.textStyle19.copyWith(fontStyle: FontStyle.italic),
         ),
         const SizedBox(height: 20),
-        const BookRating(
-          rating: 5 , count: 250,
+        BookRating(
+          rating: books.volumeInfo.pageCount! , count: books.volumeInfo.pageCount!,
           mainAxisAlignment: MainAxisAlignment.center),
         const SizedBox(height: 35),
         const BookAction(),
