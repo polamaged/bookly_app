@@ -29,7 +29,7 @@ final BookModel books;
           rating: books.volumeInfo.pageCount! , count: books.volumeInfo.pageCount!,
           mainAxisAlignment: MainAxisAlignment.center),
         const SizedBox(height: 35),
-        const BookAction(),
+        BookAction(bookModel: books,),
       ],
     );
   }
