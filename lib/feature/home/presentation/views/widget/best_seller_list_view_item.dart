@@ -36,7 +36,7 @@ final BookModel bookModel;
                     ),
                   ),
                   const SizedBox(height: 5),
-                   Text(bookModel.volumeInfo.authors![0], style: Styles.textStyle17),
+                   Text(bookModel.volumeInfo.authors != null && bookModel.volumeInfo.authors!.isNotEmpty ? bookModel.volumeInfo.authors![0] : ' ', style: Styles.textStyle17),
                   const SizedBox(height: 11),
                   Row(
                     children: [
