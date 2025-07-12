@@ -2,6 +2,7 @@ import 'package:bookly_app/feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/books_details_section.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/custom_book_details_appbar.dart';
 import 'package:bookly_app/feature/home/presentation/views/widget/smilar_book_section.dart';
+import 'package:bookly_app/feature/library/data/Models/saved_book_model/saved_book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -19,7 +20,7 @@ final BookModel bookModel;
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                const CustomBookDeitalsAppBar(),
+                 CustomBookDeitalsAppBar(book: SavedBookModel.fromBookModel(bookModel)),
                 BookDetailsSection(books: bookModel,),
                 const Expanded(child: SizedBox(height: 50)),
                 const SmilirBookSection(),

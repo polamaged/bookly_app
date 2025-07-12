@@ -1,9 +1,12 @@
 import 'package:bookly_app/core/widgets/custom_icon.dart';
+import 'package:bookly_app/feature/library/data/Models/saved_book_model/saved_book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
 
 class CustomBookDeitalsAppBar extends StatelessWidget {
-  const CustomBookDeitalsAppBar({super.key});
+  final SavedBookModel book;
+  const CustomBookDeitalsAppBar({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +15,40 @@ class CustomBookDeitalsAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomIcon(onpressed: () {
-            GoRouter.of(context).pop();
-          }, icon: Icons.close),
-          CustomIcon(onpressed: () {}, icon: Icons.shopping_cart),
+    CustomIcon(
+      onpressed: () {
+        GoRouter.of(context).pop();
+      },
+      icon: Icons.close,
+    ),
+    CustomIcon(
+      onpressed: () async {
+        final box = Hive.box<SavedBookModel>('libraryBox');
+
+        final index = box.values.toList().indexWhere(
+          (b) => b.title == book.title && b.thumbnail == book.thumbnail,
+        );
+
+        if (index == -1) {
+          await box.add(book);
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('✅ Book saved to your library!'),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('ℹ️ Already saved at index $index'),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        }
+      },
+      icon: Icons.add_shopping_cart,
+    ),
         ],
       ),
     );
