@@ -22,28 +22,34 @@ class SavedBookListItem extends StatelessWidget {
         height: 150,
         child: Row(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                book.thumbnail,
-                width: 100,
-                height: 140,
-                fit: BoxFit.cover,
-                errorBuilder: (context, _, __) => const Icon(Icons.broken_image),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  book.thumbnail,
+                  width: 100,
+                  height: 140,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, _, __) => const Icon(Icons.broken_image),
+                  
+                ),
               ),
             ),
-            const SizedBox(width: 30),
+            const SizedBox(width: 30 ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                
                 children: [
+                  const SizedBox(height: 30 ),
                   Text(
                     book.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle22,
                   ),
-                  const Spacer(),
+                  const SizedBox(height: 32,),
                   Text(
                     'Tap to preview',
                     style: Styles.textStyle17.copyWith(color: Colors.blue),

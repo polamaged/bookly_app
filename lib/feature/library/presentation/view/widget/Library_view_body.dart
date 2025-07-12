@@ -33,7 +33,26 @@ class LibraryViewBody extends StatelessWidget {
                   return ListView.builder(
                     itemCount: books.length,
                     itemBuilder:(context, index) {
-                      return SavedBookListItem(book: books[index]);
+                      return Dismissible(
+                        key: Key(books[index].title),
+                        direction: DismissDirection.endToStart,
+                        background: Container(
+                          color: Colors.red,
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: const Icon(Icons.delete, color: Colors.white),
+                        ),
+                        onDismissed: (direction) {
+                          books[index].delete();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Book Removed From Library")),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal:16),
+                          child: SavedBookListItem(book: books[index]),
+                        ),
+                      );
                     }, );
                 }
                  // Placeholder

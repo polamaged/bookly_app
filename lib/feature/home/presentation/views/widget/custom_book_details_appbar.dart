@@ -34,14 +34,16 @@ class CustomBookDeitalsAppBar extends StatelessWidget {
 
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('✅ Book saved to your library!'),
+              backgroundColor: Colors.black,
+              content: Text('✅ Book saved to your library!', style: TextStyle(color: Colors.white)),
               behavior: SnackBarBehavior.floating,
             ),
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('ℹ️ Already saved at index $index'),
+              backgroundColor: Colors.black,
+              content: Text('ℹ️ Already saved at book number : $index' , style: TextStyle(color: Colors.white),),
               behavior: SnackBarBehavior.floating,
             ),
           );
